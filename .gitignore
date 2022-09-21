@@ -46,5 +46,5 @@ screenshots/
 /docker-compose/postgres-data
 /docker-compose/tmp
 
-#Arbitrum
+#Mantle
 init/node_modules/

@@ -1,12 +1,12 @@
-defmodule EthereumJSONRPC.Arbitrum do
+defmodule EthereumJSONRPC.Mantle do
   @moduledoc """
-  Ethereum JSONRPC methods that are only supported by [Arbitrum L2]https://github.com/OffchainLabs/arbitrum).
+  Ethereum JSONRPC methods that are only supported by [Mantle L2](https://github.com/mantlenetworkio/mantle).
   """
 
   @behaviour EthereumJSONRPC.Variant
 
   @doc """
-  Block reward contract beneficiary fetching is not supported currently for Arbitrum L2.
+  Block reward contract beneficiary fetching is not supported currently for Mantle L2.
 
   To signal to the caller that fetching is not supported, `:ignore` is returned.
   """
@@ -14,7 +14,7 @@ defmodule EthereumJSONRPC.Arbitrum do
   def fetch_beneficiaries(_block_range, _json_rpc_named_arguments), do: :ignore
 
   @doc """
-  Internal transaction fetching is not currently supported for Arbitrum L2.
+  Internal transaction fetching is not currently supported for Mantle L2.
 
   To signal to the caller that fetching is not supported, `:ignore` is returned.
   """
@@ -22,7 +22,7 @@ defmodule EthereumJSONRPC.Arbitrum do
   def fetch_internal_transactions(_transactions_params, _json_rpc_named_arguments), do: :ignore
 
   @doc """
-  Internal transaction fetching is not currently supported for Arbitrum L2.
+  Internal transaction fetching is not currently supported for Mantle L2.
 
   To signal to the caller that fetching is not supported, `:ignore` is returned.
   """
@@ -30,7 +30,7 @@ defmodule EthereumJSONRPC.Arbitrum do
   def fetch_block_internal_transactions(_block_range, _json_rpc_named_arguments), do: :ignore
 
   @doc """
-  Pending transaction fetching is not supported currently for Arbitrum L2.
+  Pending transaction fetching is not supported currently for Mantle L2.
 
   To signal to the caller that fetching is not supported, `:ignore` is returned.
   """
@@ -38,7 +38,7 @@ defmodule EthereumJSONRPC.Arbitrum do
   def fetch_pending_transactions(_json_rpc_named_arguments), do: :ignore
 
   @doc """
-  Traces are not supported currently for Arbitrum L2.
+  Traces are not supported currently for Mantle L2.
 
   To signal to the caller that fetching is not supported, `:ignore` is returned.
   """

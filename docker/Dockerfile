@@ -54,7 +54,7 @@ RUN cd apps/block_scout_web/assets/ && \
     npm run deploy && \
     cd -
 
-# Arbitrum: prepare arbitrary abi-installation
+# Mantle: prepare arbitrary abi-installation
 RUN cd init/ && \
     npm install && \
     cd -

@@ -303,7 +303,7 @@ defmodule EthereumJSONRPC.Receipt do
     :ignore
   end
 
-  # Arbitrum Classic fields
+  # Mantle Classic fields
   defp entry_to_elixir({key, _}) when key in ~w(returnData returnCode feeStats l1BlockNumber) do
     :ignore
   end

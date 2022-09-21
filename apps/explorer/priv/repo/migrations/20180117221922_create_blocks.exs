@@ -12,7 +12,7 @@ defmodule Explorer.Repo.Migrations.CreateBlocks do
       add(:nonce, :bytea, null: false)
       add(:number, :bigint, null: false)
 
-      # arbitrum fields
+      # Mantle fields
       add(:l1_number, :bigint, null: false)
       add(:send_count, :bigint, null: false)
       add(:send_root, :bytea, null: false)

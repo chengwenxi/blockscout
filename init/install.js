@@ -13,7 +13,7 @@ const client = new Client({
     port: port,
 })
 
-console.log("Updating Postgres tables for L2 Arbitrum");
+console.log("Updating Postgres tables for L2 Mantle");
 
 const datadir = __dirname + '/data/';
 
@@ -68,7 +68,7 @@ const datadir = __dirname + '/data/';
                 console.log('  => method', selector, item.name);
                 await client.query(
                     `INSERT INTO contract_methods (identifier, abi, type, inserted_at, updated_at)
-                     VALUES ($1, $2, 'ArbOS', now(), now())
+                     VALUES ($1, $2, 'MtOS', now(), now())
                      ON CONFLICT (identifier, abi) DO UPDATE SET identifier = $1, abi = $2`,
                     [selector, item],
                 );
@@ -81,22 +81,22 @@ const datadir = __dirname + '/data/';
         );
     }
 
-    await install('a4b05', 'ArbosActs'         , 'ArbOS'             , 'EVM Hypervisor (go 1.17)')
-    await install('00064', 'ArbSys'            , 'ArbSys'            , 'L2 Precompile (go 1.17)')
-    await install('00065', 'ArbInfo'           , 'ArbInfo'           , 'L2 Precompile (go 1.17)')
-    await install('00066', 'ArbAddressTable'   , 'ArbAddressTable'   , 'L2 Precompile (go 1.17)')
-    await install('00067', 'ArbBLS'            , 'ArbBLS'            , 'L2 Precompile (go 1.17)')
-    await install('00068', 'ArbFunctionTable'  , 'ArbFunctionTable'  , 'L2 Precompile (go 1.17)')
-    await install('00069', 'ArbosTest'         , 'ArbosTest'         , 'L2 Precompile (go 1.17)')
-    await install('0006b', 'ArbOwnerPublic'    , 'ArbOwnerPublic'    , 'L2 Precompile (go 1.17)')
-    await install('0006c', 'ArbGasInfo'        , 'ArbGasInfo'        , 'L2 Precompile (go 1.17)')
-    await install('0006d', 'ArbAggregator'     , 'ArbAggregator'     , 'L2 Precompile (go 1.17)')
-    await install('0006e', 'ArbRetryableTx'    , 'ArbRetryableTx'    , 'L2 Precompile (go 1.17)')
-    await install('0006f', 'ArbStatistics'     , 'ArbStatistics'     , 'L2 Precompile (go 1.17)')
-    await install('00070', 'ArbOwner'          , 'ArbOwner'          , 'L2 Precompile (go 1.17)')
+    await install('a4b05', 'MtosActs'         , 'MtOS'             , 'EVM Hypervisor (go 1.17)')
+    await install('00064', 'MtSys'            , 'MtSys'            , 'L2 Precompile (go 1.17)')
+    await install('00065', 'MtInfo'           , 'MtInfo'           , 'L2 Precompile (go 1.17)')
+    await install('00066', 'MtAddressTable'   , 'MtAddressTable'   , 'L2 Precompile (go 1.17)')
+    await install('00067', 'MtBLS'            , 'MtBLS'            , 'L2 Precompile (go 1.17)')
+    await install('00068', 'MtFunctionTable'  , 'MtFunctionTable'  , 'L2 Precompile (go 1.17)')
+    await install('00069', 'MtosTest'         , 'MtosTest'         , 'L2 Precompile (go 1.17)')
+    await install('0006b', 'MtOwnerPublic'    , 'MtOwnerPublic'    , 'L2 Precompile (go 1.17)')
+    await install('0006c', 'MtGasInfo'        , 'MtGasInfo'        , 'L2 Precompile (go 1.17)')
+    await install('0006d', 'MtAggregator'     , 'MtAggregator'     , 'L2 Precompile (go 1.17)')
+    await install('0006e', 'MtRetryableTx'    , 'MtRetryableTx'    , 'L2 Precompile (go 1.17)')
+    await install('0006f', 'MtStatistics'     , 'MtStatistics'     , 'L2 Precompile (go 1.17)')
+    await install('00070', 'MtOwner'          , 'MtOwner'          , 'L2 Precompile (go 1.17)')
     await install('000c8', 'NodeInterface'     , 'NodeInterface'     , 'Not installed')
     await install('000c9', 'NodeInterfaceDebug', 'NodeInterfaceDebug', 'Not installed')
-    await install('000ff', 'ArbDebug'          , 'ArbDebug'          , 'L2 Precompile (go 1.17)')
+    await install('000ff', 'MtDebug'          , 'MtDebug'          , 'L2 Precompile (go 1.17)')
 
     await client.end()
 })();

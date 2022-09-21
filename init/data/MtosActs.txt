@@ -1,0 +1,7 @@
+MtOS is the Layer 2 EVM hypervisor that facilitates the execution environment of L2 Mantle. MtOS accounts for and manages network resources, produces blocks from incoming messages, and operates its instrumented instance of geth for smart contract execution. For more information please see the source code and documentation.
+
+Source Code
+https://github.com/mantlenetworkio/mantle
+
+Documentation
+https://github.com/mantlenetworkio/mantle/blob/master/docs/arbos/MtOS.md
